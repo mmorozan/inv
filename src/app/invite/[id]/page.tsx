@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 import preparedData from "@/data/preparedData";
@@ -6,15 +5,21 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { Suspense } from "react";
+import { Metadata } from "next";
 
 const DATE = "24.02.2024";
 const TIME = "18:00";
 const ADDRESS = "Бауманская улица, 50/12с1";
 
+export const metadata: Metadata = {
+  title: "Приглашение на день рождения",
+  description: "Let's celebrate!",
+};
+
 type LabelProps = {
   colorCode: string;
   children: React.ReactNode;
-}
+};
 
 const Label = ({ colorCode, children }: LabelProps) => {
   return (
@@ -29,17 +34,19 @@ const Label = ({ colorCode, children }: LabelProps) => {
 type ValueProps = {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 const Value = ({ children, className }: ValueProps) => {
-  return <span className={clsx("text-2xl inline-block", className)}>{children}</span>;
+  return (
+    <span className={clsx("text-2xl inline-block", className)}>{children}</span>
+  );
 };
 
 type MapIconProps = {
   colorCode: string;
-}
+};
 
-const MapIcon = ({colorCode}: MapIconProps) => {
+const MapIcon = ({ colorCode }: MapIconProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -63,19 +70,21 @@ const MapIcon = ({colorCode}: MapIconProps) => {
   );
 };
 
-export default function Invite() {
-  return (
-    <Suspense>
-      <InviteComponent/>
-    </Suspense>
-  )
+export async function generateStaticParams() { 
+  return preparedData.map((item) => ({
+    id: item.id,
+  }))
 }
-function InviteComponent() {
-  const params = useSearchParams();
-  const inviteCode = params.get("inviteCode");
-  const person = preparedData.find((item) => item.id === inviteCode);
-  if (!inviteCode || !person) {
-    return null;
+
+export default function InviteComponent({ params }: { params: { id: string } }) {
+  const person = preparedData.find((item) => item.id === params.id);
+  console.log({params})
+  if (!person) {
+    return (
+      <div>
+        <h1>404 11</h1>
+      </div>
+    );
   }
   return (
     <main className="h-full flex min-h-screen flex-col items-center justify-between p-10 bg-gradient-to-b from-zinc-600 to-zinc-900 text-white ">
@@ -109,7 +118,11 @@ function InviteComponent() {
         <Value>{TIME}</Value>
         <Label colorCode={person.colorCode}>Место:</Label>
         <Value>
-          <a href="https://yandex.ru/maps/-/CDBTRJPM" target="_blank" className="underline">
+          <a
+            href="https://yandex.ru/maps/-/CDBTRJPM"
+            target="_blank"
+            className="underline"
+          >
             {ADDRESS} <MapIcon colorCode={person.colorCode} />
           </a>
         </Value>

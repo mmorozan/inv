@@ -34,7 +34,7 @@ export default function Home() {
         <div className="hidden ring-red-500 ring-amber-500 ring-gray-500 ring-pink-500 ring-green-500 ring-purple-500 ring-orange-500 ring-black"></div>
         {/* <h1 className="text-3xl">Гости:</h1> */}
         {false && shuffle(preparedData).map((item, index) => (
-          <Link key={item.id} href={`/invite?inviteCode=${item.id}`}>
+          <Link key={item.id} href={`/invite/${item.id}`}>
             <Component
               name={item.name}
               img={item.photo}
