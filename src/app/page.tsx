@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import data from "../data/data.json";
 import preparedData from "../data/preparedData.js";
 import { shuffle } from "lodash";
@@ -7,14 +7,20 @@ const DATE = "24.02.2024";
 const TIME = "16:00";
 const ADDRESS = "ул.Пушкина, дом Колотушкина, 12";
 
+type ComponentProps = {
+  name: string;
+  img: StaticImageData;
+  colorCode: string;
+};
+
 //bg-gradient-to-b from-zinc-500 to-zinc-700
-const Component = ({ name, img, colorCode }) => {
+const Component = ({ name, img, colorCode }: ComponentProps) => {
   return (
     <div
       className={`p-4 rounded-xl bg-gradient-to-b from-zinc-500 to-zinc-700 drop-shadow-xl shadow-md shadow-${colorCode}-500 shadow-${colorCode} ring-2 ring-${colorCode} ring-${colorCode}-500`}
     >
       <div className="w-48 h-48 md:w-60 md:h-60 rounded-xl text-center flex flex-col max-w-md overflow-hidden justify-center">
-        <Image src={img} width={272} height={272} />
+        <Image src={img} width={272} height={272} alt="photo" />
       </div>
     </div>
   );

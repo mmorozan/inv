@@ -5,6 +5,7 @@ import preparedData from "@/data/preparedData";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { clsx } from "clsx";
+import { Suspense } from "react";
 
 const DATE = "24.02.2024";
 const TIME = "18:00";
@@ -63,6 +64,13 @@ const MapIcon = ({colorCode}: MapIconProps) => {
 };
 
 export default function Invite() {
+  return (
+    <Suspense>
+      <InviteComponent/>
+    </Suspense>
+  )
+}
+function InviteComponent() {
   const params = useSearchParams();
   const inviteCode = params.get("inviteCode");
   const person = preparedData.find((item) => item.id === inviteCode);
