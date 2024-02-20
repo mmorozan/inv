@@ -14,6 +14,10 @@ const ADDRESS = "Бауманская улица, 50/12с1";
 export const metadata: Metadata = {
   title: "Приглашение на день рождения",
   description: "Let's celebrate!",
+  openGraph: {
+    title: "Приглашение на день рождения",
+    description: "Let's celebrate!",
+  }
 };
 
 type LabelProps = {
