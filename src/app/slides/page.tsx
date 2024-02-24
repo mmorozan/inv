@@ -92,7 +92,7 @@ export default function Slides({ params }: { params: { id: string } }) {
           {preparedData.map((person) => (
             <div
             key={person.id}
-              className={`h-full w-full mx-2 h-[800px] drop-shadow-xl bg-${person.colorCode}/10 bg-${person.colorCode}-500/50 rounded-xl backdrop-blur-md p-10 text-center flex flex-col max-w-md border-2 border-${person.colorCode} border-${person.colorCode}-500`}
+              className={`w-full mx-2 h-[800px] drop-shadow-xl bg-${person.colorCode}/10 bg-${person.colorCode}-500/50 rounded-xl backdrop-blur-md p-10 text-center flex flex-col max-w-md border-2 border-${person.colorCode} border-${person.colorCode}-500`}
             >
               <span
                 className={`text-3xl font-bold inline-block text-${person.colorCode} text-${person.colorCode}-500`}

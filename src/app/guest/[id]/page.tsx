@@ -92,7 +92,7 @@ export default function Guest({ params }: { params: { id: string } }) {
         </div>
         <div className="mt-2 flex flex-col">
           <Label colorCode={person.colorCode}>О себе</Label>
-          <span className={"text-sm inline-block"}>{person.id === 'sms3' ? <span>Я бэтмен. \nОтмечаем мой др, кста. А сколько годиков - <Link href={'/secret'}>секрет</Link></span> : person.about}</span>
+          <span className={"text-sm inline-block"}>{person.id === 'sms3' ? <span>Я бэтмен. Отмечаем мой др, кста. А сколько годиков - <Link href={'/secret'}>секрет</Link></span> : person.about}</span>
         </div>
         {/* <Link href="/" className="mt-auto">  */}
           <button
