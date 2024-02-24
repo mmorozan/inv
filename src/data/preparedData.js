@@ -12,9 +12,24 @@ import Roman from '../../public/Roman.jpg';
 import Aya from '../../public/Aya.jpg';
 import Polina from '../../public/Polina.jpg';
 import Miha from '../../public/Miha.jpg';
+import Denis from '../../public/Denis.jpg';
+import Maina from '../../public/Maina.jpg';
 
 
 const data = [
+  {
+    "id":"sms3",
+    "name": "Денис",
+    "city": "Москва",
+    "profession": "Зам душнилы",
+    "photo": Denis,
+    "color": "Красный",
+    "colorCode":"red",
+    "drink": "Кола",
+    "sweet": "Да",
+    "quiz": "-",
+    "about": "Я бэтмен. \nОтмечаем мой др, кста. А сколько годиков - секрет"
+  },
   {
     "id":"fYCo",
     "name": "Игарь",
@@ -196,6 +211,18 @@ const data = [
     "sweet": "Да",
     "quiz": "Сериальчики",
     "about": "Коренной северянин, родом из Сургута. Выбрался из замкадья, живу в Москве. Пытаюсь писать код, временами получается)))"
+  }, {
+    "id": "0000",
+    "name": "Маина",
+    "city": "Москва",
+    "profession": "ИП , менеджер по управлению комплексными программами",
+    "photo": Maina,
+    "color": "Фиолетовый/лавандовый",
+    "colorCode": "purple",
+    "drink": "Коктейль клубничный",
+    "sweet": "Да",
+    "quiz": "Сериалы",
+    "about": "Сложно, очень сложно. мы не знаем, что это такое, если бы мы знали, что это такое, но мы не знаем, что это такое ©"
   }
 ]
 
