@@ -2,6 +2,8 @@ import Image, { StaticImageData } from "next/image";
 import preparedData from "../data/preparedData.js";
 import { shuffle } from "lodash";
 import Link from "next/link";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 
 
 type ComponentProps = {
@@ -24,6 +26,10 @@ const Component = ({ name, img, colorCode }: ComponentProps) => {
 };
 
 export default function Home() {
+  useEffect(() => {
+    redirect('/invite/')
+  }, [])
+  
   return (
     <main className="h-full min-h-screen p-4 bg-gradient-to-b from-sky-300 to-fuchsia-300 text-white overflow-scroll">
       <div className="md:max-w-4xl flex flex-col items-center justify-center content-baseline gap-4 mx-auto">
