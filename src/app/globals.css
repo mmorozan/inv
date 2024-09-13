@@ -34,3 +34,136 @@ body, html {
     text-wrap: balance;
   }
 } */
+
+header {
+  height: 100vh;
+  background: url('base2.png');
+  background-position: 30% 0;
+  background-size: cover;
+}
+
+.time {
+  position: relative;
+  margin-top: -100px;
+  border-radius: 40px;
+  background-color: #fff;
+}
+.svg {
+  position: absolute;
+  opacity: 0.2;
+  z-index: -1;
+}
+.custom-right {
+  right: calc(50% - 150px);
+}
+.custom-map {
+  left: calc(50% - 100px);
+}
+.svg-q {
+  position: absolute;
+  z-index: -1;
+  left: calc(50% - 175px);
+  top: calc(50% - 175px);
+}
+.wblue {
+  position: relative;
+  background-color: #ecfcff;
+}
+
+.myborderhalf:before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 50%;
+  top: 50%;
+  border-left: 2px solid #49e2ff;
+}
+.myborderhalf-end:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 50%;
+  bottom: 50%;
+  border-right: 2px solid #49e2ff;
+}
+
+.myborder-right:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  border-left: 2px solid #49e2ff;
+}
+.myborder-left:before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  border-left: 2px solid #49e2ff;
+}
+
+.dot-left:after, .dot-right:before {
+  content: '';
+  width: 8px;
+  position: absolute;
+  height: 8px;
+  background-color: #00d7ff;
+  border-radius: 10px;
+  top: calc(50% - 4px);
+  left: calc(50% - 3px);
+  z-index: 1;
+}
+.dot-right:after {
+  right: calc(50% - 2px);
+}
+.dot-right {
+
+}
+
+.calendar-heart {
+  top: -8px;
+  display: flex;
+  position: absolute;
+  left: calc(50% - 25px);
+  animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+      transform: scale( 1 );
+  }
+  20% {
+      transform: scale( 1.25 )
+  }
+  40% {
+      transform: scale( 1.5 )
+  }
+}
+
+.fem {
+  height: 150px;
+  width: 150px;
+  background: url('fem.png');
+  background-position: 30% 0;
+  background-size: cover;
+}
+
+.mal {
+  height: 150px;
+  width: 150px;
+  background: url('mal.png');
+  background-position: 30% 0;
+  background-size: cover;
+}
+
+.dildo {
+  width: 300px;
+  height: 300px;
+  background: url('123.webp');
+  filter: blur(4px);
+  background-size: cover;
+}
+
+.imgSlider {
+  width: 50%;
+}
