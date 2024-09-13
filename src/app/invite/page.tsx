@@ -324,7 +324,7 @@ function InviteComponent() {
           </div>
         </div>
       </div>
-      <script src="https://forms.yandex.ru/_static/embed.js"></script>
+      <script src="https://forms.yandex.ru/_static/embed.js" async></script>
       <iframe src="https://forms.yandex.ru/u/66c4f34884227c11f8ede184/?iframe=1" name="ya-form-66c4f34884227c11f8ede184" width="100%"></iframe>
       <div className="container mx-auto text-center my-10">
         <div className="columns-1">
