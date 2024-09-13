@@ -1,6 +1,5 @@
 "use client";
 import data from "@/data/data.json";
-import { useSearchParams } from "next/navigation";
 import { Pattaya } from 'next/font/google'
 import classnames from'classnames';
 import ImageViewer from 'react-simple-image-viewer';
@@ -103,8 +102,6 @@ function InviteComponent() {
   const {min, days, hours, sec} = useTime('2024-09-22T20:00:00');
   // const {width} = getWindowDimensions()
   const {width} = useWindowSize();
-  // console.log({size})
-  const params = useSearchParams();
 
   const openImageViewer = useCallback((index: number) => {
     setCurrentImage(index);

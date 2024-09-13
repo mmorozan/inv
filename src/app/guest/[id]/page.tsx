@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import preparedData from "@/data/preparedData";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { clsx } from "clsx";
 import { Suspense } from "react";
