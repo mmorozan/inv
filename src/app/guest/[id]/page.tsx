@@ -11,6 +11,9 @@ import { Metadata } from "next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Roboto } from 'next/font/google'
+import classnames from'classnames';
+const roboto = Roboto({ subsets: ['cyrillic'], weight: "400" })
 // export const metadata: Metadata = {
 //   title: "Список гостей",
 //   description: "",
@@ -61,7 +64,7 @@ export default function Guest({ params }: { params: { id: string } }) {
     );
   }
   return (
-    <main className="h-full  min-h-screen flex  justify-center p-10 bg-gradient-to-b from-zinc-600 to-zinc-900 text-white overflow-hidden">
+    <main className={classnames("h-full  min-h-screen flex  justify-center p-10 bg-gradient-to-b from-sky-300 to-fuchsia-300 text-white overflow-hidden", roboto.className)}>
       <div className="hidden shadow-red-500 shadow-amber-500 shadow-gray-500 shadow-pink-500 shadow-green-500 shadow-purple-500 shadow-orange-500 shadow-blue-500 shadow-black"></div>
       <div className="hidden ring-red-500 ring-amber-500 ring-gray-500 ring-pink-500 ring-green-500 ring-purple-500 ring-orange-500 ring-blue-500 ring-black"></div>
       <div className="hidden text-red-500 text-amber-500 text-gray-500 text-pink-500 text-green-500 text-purple-500 text-orange-500 text-blue-500 text-black"></div>
@@ -87,12 +90,16 @@ export default function Guest({ params }: { params: { id: string } }) {
           <Value>{person.profession}</Value>
         </div>
         <div className="mt-2 flex flex-col">
-          <Label colorCode={person.colorCode}>Город</Label>
-          <Value>{person.city}</Value>
+          <Label colorCode={person.colorCode}>Думает что будет</Label>
+          <Value>{person.gender}</Value>
+        </div>
+        <div className="mt-2 flex flex-col">
+          <Label colorCode={person.colorCode}>Хобби</Label>
+          <Value>{person.hobby}</Value>
         </div>
         <div className="mt-2 flex flex-col">
           <Label colorCode={person.colorCode}>О себе</Label>
-          <span className={"text-sm inline-block"}>{person.id === 'sms3' ? <span>Я бэтмен. Отмечаем мой др, кста. А сколько годиков - <Link href={'/secret'}>секрет</Link></span> : person.about}</span>
+          <span className={"text-sm inline-block"}>{person.about}</span>
         </div>
         {/* <Link href="/" className="mt-auto">  */}
           <button
